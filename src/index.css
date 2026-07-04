@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&family=Fragment+Mono:ital@0;1&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Palette — land / glass / green (Apple-style) */
+  --ink: 150 18% 11%;
+  --green-deep: 152 49% 22%;
+  --green: 145 46% 34%;
+  --green-cta: 142 55% 40%;
+  --cream: 41 33% 94%;
+
+  /* shadcn tokens (light) */
+  --background: 0 0% 100%;
+  --foreground: 150 18% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 150 18% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 150 18% 11%;
+  --primary: 152 49% 22%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 41 33% 94%;
+  --secondary-foreground: 150 18% 11%;
+  --muted: 150 10% 95%;
+  --muted-foreground: 150 6% 42%;
+  --accent: 41 33% 94%;
+  --accent-foreground: 150 18% 11%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 150 10% 90%;
+  --input: 150 10% 90%;
+  --ring: 142 55% 40%;
+  --radius: 1rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #ffffff;
+  color: hsl(var(--ink));
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Distinctive display face — used with restraint (hero + key numbers) */
+.font-display {
+  font-family: "Unbounded", "Manrope", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  overflow-wrap: break-word;
+}
+
+.tight {
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+}
+
+/* Legibility of light text over photos */
+.hero-shadow {
+  text-shadow: 0 2px 18px rgba(6, 16, 11, 0.5), 0 1px 2px rgba(6, 16, 11, 0.55);
+}
+
+/* Experimental monospace for micro-labels */
+.mono {
+  font-family: "Fragment Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+/* Glass surfaces (frosted) */
+.glass {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.glass-soft {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.glass-dark {
+  background: rgba(18, 30, 23, 0.42);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* Gradient text — deep green */
+.gradient-text {
+  background: linear-gradient(135deg, #2fae5b 0%, #1c5238 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Slow ambient zoom for panorama */
+@keyframes kenburns {
+  from { transform: scale(1.03); }
+  to { transform: scale(1.13); }
+}
+.kenburns {
+  animation: kenburns 24s ease-in-out infinite alternate;
+}
+
+/* Signature motif: faint hectare grid */
+.hectare-grid {
+  background-image:
+    linear-gradient(rgba(28, 82, 56, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 82, 56, 0.055) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+/* Scroll-reveal animation used by useScrollAnimation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kenburns { animation: none; }
+}
+
+::selection {
+  background: hsl(var(--green-cta) / 0.22);
+  color: hsl(var(--ink));
+}
+
+/* Custom scrollbar — refined green on cream */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f1ea;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c5238;
+  border-radius: 999px;
+  border: 2px solid #f4f1ea;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #16432e;
+}
+
+/* Apple-like range slider with green fill */
+input[type="range"].gk-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 999px;
+  outline: none;
+}
+input[type="range"].gk-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  margin-top: -1px;
+}
+input[type="range"].gk-range::-webkit-slider-thumb:active {
+  transform: scale(1.1);
+}
+input[type="range"].gk-range::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

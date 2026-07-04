@@ -1,0 +1,16 @@
+# dependencies
+node_modules
+
+# build output (собирается в CI, не храним в репозитории)
+dist
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / os
+.DS_Store
+.vscode
+.idea
+*.local
+.vite

@@ -1,0 +1,40 @@
+name: Build & Deploy to reg.ru
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to reg.ru via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Что заливаем: только собранная папка dist
+          local-dir: ./dist/
+          # Куда на хостинге (заканчивается на /). Задаётся секретом FTP_SERVER_DIR,
+          # напр. /public_html/ или /site.ru/public_html/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          # reg.ru обычно поддерживает обычный FTP. Если хостинг требует FTPS —
+          # поменяйте на: protocol: ftps
+          protocol: ftp
