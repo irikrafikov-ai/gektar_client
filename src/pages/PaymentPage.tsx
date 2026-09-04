@@ -218,8 +218,7 @@ export function PaymentPage() {
                       <option value="">Выберите участок</option>
                       {selectedDistrict.lots.map((lot) => (
                         <option key={lot.id} value={lot.id} disabled={!isLotAvailable(lot)}>
-                          №{lot.number}
-                          {lot.areaLabel ? `, ${lot.areaLabel}` : ''} — {formatRub(lot.price)}
+                          №{lot.number} — {formatRub(lot.price)}
                           {isLotAvailable(lot) ? '' : ` (${lotStatusLabel(lot.status)})`}
                         </option>
                       ))}
