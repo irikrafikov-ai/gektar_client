@@ -17,14 +17,29 @@ function gk_config(): array
     if ($config === null) {
         $path = __DIR__ . '/config.php';
         if (!is_file($path)) {
-            gk_fail(500, 'Платёжный модуль не настроен: нет config.php');
+            gk_fail(500, 'Модуль не настроен: нет config.php');
         }
         $config = require $path;
-        if (!is_array($config) || ($config['shop_id'] ?? '') === '' || ($config['secret_key'] ?? '') === '') {
-            gk_fail(500, 'Платёжный модуль не настроен: пустые ключи ЮKassa');
+        if (!is_array($config)) {
+            gk_fail(500, 'Модуль не настроен: config.php повреждён');
         }
     }
     return $config;
+}
+
+/**
+ * Проверяет, что ключи ЮKassa заданы.
+ *
+ * Вызывается только там, где мы реально идём в ЮKassa. Каталог участков
+ * от платёжных ключей не зависит и обязан работать без них: список
+ * участков нужен сайту, даже когда приём платежей ещё не подключён.
+ */
+function gk_require_yookassa(): void
+{
+    $config = gk_config();
+    if (($config['shop_id'] ?? '') === '' || ($config['secret_key'] ?? '') === '') {
+        gk_fail(503, 'Онлайн-оформление временно недоступно. Позвоните нам: +7 (995) 169-12-30');
+    }
 }
 
 // --- HTTP-ответы ----------------------------------------------------------
@@ -99,6 +114,7 @@ function gk_log(string $kind, array $data): void
  */
 function gk_yookassa(string $method, string $path, ?array $payload = null, ?string $idempotenceKey = null): array
 {
+    gk_require_yookassa();
     $config = gk_config();
     $headers = [
         'Authorization: Basic ' . base64_encode($config['shop_id'] . ':' . $config['secret_key']),
