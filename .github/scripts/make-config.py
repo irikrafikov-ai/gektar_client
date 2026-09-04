@@ -76,7 +76,7 @@ return [
     'receipt_mode'    => {php_str(env('RECEIPT_MODE', 'full_payment'))},
     'receipt_subject' => {php_str(env('RECEIPT_SUBJECT', 'commodity'))},
 
-    'return_url'      => {php_str(env('PAYMENT_RETURN_URL', 'https://client.gektar.expert/#/pay/result'))},
+    'return_url'      => {php_str(env('PAYMENT_RETURN_URL', 'https://client.gektar.expert/pay/result'))},
     'allowed_origins' => ['https://client.gektar.expert', 'http://localhost:5175'],
 
     'telegram_bot_token' => {php_str(env('TELEGRAM_BOT_TOKEN'))},

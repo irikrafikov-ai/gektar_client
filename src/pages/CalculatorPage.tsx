@@ -147,7 +147,7 @@ export function CalculatorPage() {
                 Получить консультацию
               </a>
               <a
-                href="https://client.gektar.expert/"
+                href="/"
                 className="w-full flex items-center justify-center gap-3 bg-white hover:bg-[#f4f1ea] text-[#16201a] border border-[#1c5238]/10 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-[0_2px_10px_rgba(20,40,28,0.06)]"
               >
                 <ArrowLeft className="w-4 h-4 text-[#1c5238]" />

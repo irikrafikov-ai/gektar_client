@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 import { TulaPage } from './pages/TulaPage';
 import { TverPage } from './pages/TverPage';
@@ -11,7 +11,7 @@ import { RequisitesPage } from './pages/RequisitesPage';
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/tula" element={<TulaPage />} />
@@ -23,7 +23,7 @@ function App() {
         <Route path="/pay/result" element={<PaymentResultPage />} />
         <Route path="/requisites" element={<RequisitesPage />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

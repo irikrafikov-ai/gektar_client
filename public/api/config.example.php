@@ -55,8 +55,8 @@ return [
     'receipt_subject' => 'commodity',
 
     // ---------- Сайт ----------
-    // Куда ЮKassa вернёт клиента после оплаты (HashRouter → адрес с #)
-    'return_url'       => 'https://client.gektar.expert/#/pay/result',
+    // Куда ЮKassa вернёт клиента после оформления
+    'return_url'       => 'https://client.gektar.expert/pay/result',
     // Origin'ы, которым разрешён доступ к API (для локальной разработки)
     'allowed_origins'  => ['https://client.gektar.expert', 'http://localhost:5175'],
 
