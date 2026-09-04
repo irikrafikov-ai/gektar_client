@@ -1,0 +1,17 @@
+# Маршруты одностраничного приложения.
+#
+# Сейчас адреса вида /pay сервер ищет как файл и отдаёт 404 — из-за этого
+# роутинг работает через #. Правило ниже отдаёт index.html на любой путь,
+# которому не соответствует реальный файл, и разбор адреса берёт на себя React.
+#
+# Существующие файлы и папки (в том числе /api/*.php и картинки) не затрагиваются.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    RewriteRule ^ index.html [L]
+</IfModule>
