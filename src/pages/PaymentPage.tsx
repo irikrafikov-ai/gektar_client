@@ -300,7 +300,11 @@ export function PaymentPage() {
                 className="mt-1 w-4 h-4 accent-[#2fae5b] flex-shrink-0"
               />
               <span className="text-[13px] leading-relaxed text-[#16201a]/55 group-hover:text-[#16201a]/70 transition-colors">
-                Согласен с условиями рассрочки, договором оферты и обработкой персональных данных
+                Согласен с{' '}
+                <Link to="/offer" className="text-[#1c5238] underline underline-offset-2">
+                  договором оферты
+                </Link>{' '}
+                и обработкой персональных данных
               </span>
             </label>
 

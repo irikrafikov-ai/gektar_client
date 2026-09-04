@@ -186,7 +186,7 @@ export function Footer({ onContactClick }: FooterProps) {
             <Link to="/pay" className="hover:text-[#3ec469] transition-colors">Оформить рассрочку</Link>
             <Link to="/requisites" className="hover:text-[#3ec469] transition-colors">Реквизиты</Link>
             <button className="hover:text-[#3ec469] transition-colors">Политика конфиденциальности</button>
-            <button className="hover:text-[#3ec469] transition-colors">Пользовательское соглашение</button>
+            <Link to="/offer" className="hover:text-[#3ec469] transition-colors">Договор оферты</Link>
           </div>
         </div>
       </div>

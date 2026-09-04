@@ -8,6 +8,7 @@ import { CalculatorPage } from './pages/CalculatorPage';
 import { PaymentPage } from './pages/PaymentPage';
 import { PaymentResultPage } from './pages/PaymentResultPage';
 import { RequisitesPage } from './pages/RequisitesPage';
+import { OfferPage } from './pages/OfferPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/pay" element={<PaymentPage />} />
         <Route path="/pay/result" element={<PaymentResultPage />} />
         <Route path="/requisites" element={<RequisitesPage />} />
+        <Route path="/offer" element={<OfferPage />} />
       </Routes>
     </BrowserRouter>
   );
