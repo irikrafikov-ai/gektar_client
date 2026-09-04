@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { CalculatorIcon, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { CalculatorIcon, Check, CreditCard } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export function Calculator() {
@@ -138,6 +139,19 @@ export function Calculator() {
                 <Check className="w-4 h-4" />
                 <span className="text-sm">Рассрочка 0% без переплат</span>
               </div>
+            </div>
+
+            <div className="mt-6">
+              <Link
+                to="/pay"
+                className="w-full flex items-center justify-center gap-3 bg-[#2fae5b] hover:bg-[#27964d] text-white py-4 rounded-full text-[15px] font-semibold transition-all duration-500 shadow-[0_4px_24px_rgba(20,40,28,0.10)] hover:-translate-y-0.5"
+              >
+                <CreditCard className="w-5 h-5" />
+                Оформить рассрочку онлайн
+              </Link>
+              <p className="text-center text-[12px] text-[#16201a]/40 mt-3">
+                Заявка через ЮKassa, решение банка в тот же день
+              </p>
             </div>
           </div>
         </div>

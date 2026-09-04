@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Phone, Menu, X, ChevronDown, MessageCircle } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown, MessageCircle, CreditCard } from 'lucide-react';
 
 interface HeaderProps {
   onContactClick: () => void;
@@ -93,6 +93,15 @@ export function Header({ onContactClick }: HeaderProps) {
                 </div>
               )}
             </div>
+
+            {/* Онлайн-оформление рассрочки на участок */}
+            <Link
+              to="/pay"
+              className="flex items-center gap-1.5 text-[14px] font-medium text-[#1c5238] transition-colors hover:text-[#2fae5b]"
+            >
+              <CreditCard className="w-4 h-4" />
+              Оформить рассрочку
+            </Link>
           </nav>
 
           {/* Right side */}
@@ -154,6 +163,15 @@ export function Header({ onContactClick }: HeaderProps) {
                   {region.label}
                 </Link>
               ))}
+
+              <Link
+                to="/pay"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-2 py-2.5 px-4 text-[16px] font-medium text-[#1c5238]"
+              >
+                <CreditCard className="w-4 h-4" />
+                Оформить рассрочку
+              </Link>
 
               <a
                 href="tel:+79951691230"
