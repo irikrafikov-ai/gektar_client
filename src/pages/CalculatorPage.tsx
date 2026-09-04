@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { ArrowLeft, Check, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft, Check, CreditCard, Phone } from 'lucide-react';
 import { Footer } from '@/sections/Footer';
 import { ContactModal } from '@/components/ui-custom/ContactModal';
 
@@ -131,11 +132,18 @@ export function CalculatorPage() {
 
             {/* CTA Buttons */}
             <div className="space-y-3">
-              <a
-                href="tel:+79951691230"
+              <Link
+                to="/pay"
                 className="group w-full flex items-center justify-center gap-3 bg-[#2fae5b] hover:bg-[#27964d] text-white py-4 rounded-full text-sm font-semibold transition-all duration-500 shadow-[0_4px_24px_rgba(20,40,28,0.08)] hover:-translate-y-0.5"
               >
-                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <CreditCard className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                Оформить рассрочку онлайн
+              </Link>
+              <a
+                href="tel:+79951691230"
+                className="group w-full flex items-center justify-center gap-3 bg-white hover:bg-[#f4f1ea] text-[#16201a] border border-[#1c5238]/10 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-[0_2px_10px_rgba(20,40,28,0.06)]"
+              >
+                <Phone className="w-5 h-5 text-[#1c5238] group-hover:scale-110 transition-transform" />
                 Получить консультацию
               </a>
               <a

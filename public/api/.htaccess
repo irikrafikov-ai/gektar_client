@@ -1,0 +1,12 @@
+# Логи и конфиг наружу не отдаём.
+# config.php сам по себе безопасен (PHP его выполнит и ничего не выведет),
+# но если на хостинге вдруг отключат PHP — файл отдастся текстом с ключами.
+<FilesMatch "\.(log|json)$">
+    Require all denied
+</FilesMatch>
+<Files "config.php">
+    Require all denied
+</Files>
+<Files "config.example.php">
+    Require all denied
+</Files>

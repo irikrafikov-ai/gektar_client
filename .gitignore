@@ -14,3 +14,8 @@ npm-debug.log*
 .idea
 *.local
 .vite
+
+# боевой конфиг платежей — генерируется в CI из секретов, в репозитории не хранится
+public/api/config.php
+public/api/logs/*.log
+public/api/cache/lots.json

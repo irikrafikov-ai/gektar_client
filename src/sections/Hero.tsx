@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Calculator } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Calculator, CreditCard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface HeroProps {
@@ -125,6 +126,13 @@ export function Hero({ onContactClick }: HeroProps) {
                 Подобрать участок
                 <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center"><ArrowRight className="w-4 h-4" /></span>
               </Button>
+              <Link
+                to="/pay"
+                className="glass text-[#16201a] rounded-full px-6 py-3.5 text-[16px] font-semibold flex items-center justify-center gap-2 transition-colors hover:bg-white/80"
+              >
+                <CreditCard className="w-4 h-4 text-[#1c5238]" />
+                Купить в рассрочку
+              </Link>
               <Button
                 variant="outline"
                 onClick={() => document.querySelector('#calculator')?.scrollIntoView({ behavior: 'smooth' })}
@@ -221,6 +229,13 @@ export function Hero({ onContactClick }: HeroProps) {
               Подобрать участок
               <ArrowRight className="w-4 h-4" />
             </Button>
+            <Link
+              to="/pay"
+              className="w-full glass text-[#16201a] rounded-full px-6 py-4 text-[16px] font-semibold flex items-center justify-center gap-2 transition-colors hover:bg-white/80"
+            >
+              <CreditCard className="w-4 h-4 text-[#1c5238]" />
+              Купить в рассрочку
+            </Link>
             <Button
               variant="outline"
               onClick={() => document.querySelector('#calculator')?.scrollIntoView({ behavior: 'smooth' })}

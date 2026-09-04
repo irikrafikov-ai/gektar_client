@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { COMPANY_SHORT_LINE } from '@/data/company';
 
 interface FooterProps {
   onContactClick: () => void;
@@ -171,10 +173,18 @@ export function Footer({ onContactClick }: FooterProps) {
         <div ref={bottomRef} className={`border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 transition-all duration-700 ${
           bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
         }`}>
-          <p className="text-white/45 text-sm">
-            © 2024 ГектарЪ. Все права защищены.
-          </p>
-          <div className="flex gap-6 text-white/45 text-sm">
+          <div className="text-center md:text-left">
+            <p className="text-white/45 text-sm">
+              © 2024 ГектарЪ. Все права защищены.
+            </p>
+            {/* Реквизиты продавца — обязательны при приёме онлайн-платежей */}
+            <p className="text-white/35 text-[13px] mt-1.5 leading-relaxed">
+              {COMPANY_SHORT_LINE}
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white/45 text-sm">
+            <Link to="/pay" className="hover:text-[#3ec469] transition-colors">Оформить рассрочку</Link>
+            <Link to="/requisites" className="hover:text-[#3ec469] transition-colors">Реквизиты</Link>
             <button className="hover:text-[#3ec469] transition-colors">Политика конфиденциальности</button>
             <button className="hover:text-[#3ec469] transition-colors">Пользовательское соглашение</button>
           </div>

@@ -5,6 +5,9 @@ import { TverPage } from './pages/TverPage';
 import { CrimeaPage } from './pages/CrimeaPage';
 import { MoscowPage } from './pages/MoscowPage';
 import { CalculatorPage } from './pages/CalculatorPage';
+import { PaymentPage } from './pages/PaymentPage';
+import { PaymentResultPage } from './pages/PaymentResultPage';
+import { RequisitesPage } from './pages/RequisitesPage';
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path="/crimea" element={<CrimeaPage />} />
         <Route path="/moscow" element={<MoscowPage />} />
         <Route path="/calculator" element={<CalculatorPage />} />
+        <Route path="/pay" element={<PaymentPage />} />
+        <Route path="/pay/result" element={<PaymentResultPage />} />
+        <Route path="/requisites" element={<RequisitesPage />} />
       </Routes>
     </HashRouter>
   );

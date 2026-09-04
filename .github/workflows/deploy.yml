@@ -24,6 +24,28 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Боевой конфиг платежей собирается здесь, а не лежит в репозитории:
+      # ключи ЮKassa живут только в Secrets. Файл попадает в dist/api/ и
+      # уезжает на хостинг вместе с сайтом.
+      - name: Generate payment config
+        env:
+          YOOKASSA_SHOP_ID:         ${{ secrets.YOOKASSA_SHOP_ID }}
+          YOOKASSA_SECRET_KEY:      ${{ secrets.YOOKASSA_SECRET_KEY }}
+          YOOKASSA_SEND_RECEIPT:    ${{ vars.YOOKASSA_SEND_RECEIPT }}
+          YOOKASSA_VAT_CODE:        ${{ vars.YOOKASSA_VAT_CODE }}
+          YOOKASSA_TAX_SYSTEM_CODE: ${{ vars.YOOKASSA_TAX_SYSTEM_CODE }}
+          YOOKASSA_PAYMENT_METHOD:  ${{ vars.YOOKASSA_PAYMENT_METHOD }}
+          INSTALLMENT_MIN_AMOUNT:   ${{ vars.INSTALLMENT_MIN_AMOUNT }}
+          INSTALLMENT_MAX_AMOUNT:   ${{ vars.INSTALLMENT_MAX_AMOUNT }}
+          PAYMENT_RETURN_URL:       ${{ vars.PAYMENT_RETURN_URL }}
+          LOTS_SOURCE_URL:          ${{ vars.LOTS_SOURCE_URL }}
+          RECEIPT_MODE:             ${{ vars.RECEIPT_MODE }}
+          RECEIPT_SUBJECT:          ${{ vars.RECEIPT_SUBJECT }}
+          TELEGRAM_BOT_TOKEN:       ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:         ${{ vars.TELEGRAM_CHAT_ID }}
+          GAS_WEBAPP_URL:           ${{ secrets.GAS_WEBAPP_URL }}
+        run: python3 .github/scripts/make-config.py
+
       - name: Deploy to reg.ru via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
