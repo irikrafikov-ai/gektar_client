@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { CalculatorIcon, Check, CreditCard } from 'lucide-react';
+import { CalculatorIcon, Check, Handshake } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export function Calculator() {
@@ -141,16 +140,14 @@ export function Calculator() {
               </div>
             </div>
 
-            <div className="mt-6">
-              <Link
-                to="/pay"
-                className="w-full flex items-center justify-center gap-3 bg-[#2fae5b] hover:bg-[#27964d] text-white py-4 rounded-full text-[15px] font-semibold transition-all duration-500 shadow-[0_4px_24px_rgba(20,40,28,0.10)] hover:-translate-y-0.5"
-              >
-                <CreditCard className="w-5 h-5" />
-                Оформить рассрочку онлайн
-              </Link>
-              <p className="text-center text-[12px] text-[#16201a]/40 mt-3">
-                Заявка через ЮKassa, решение банка в тот же день
+            {/* Здесь считается рассрочка ОТ СОБСТВЕННИКА. Банковская рассрочка —
+                отдельный продукт с другими условиями, её оформляют на /pay. */}
+            <div className="mt-5 flex items-start gap-3 bg-[#f4f1ea] rounded-2xl p-5">
+              <Handshake className="w-5 h-5 text-[#1c5238] flex-shrink-0 mt-0.5" />
+              <p className="text-[13px] leading-relaxed text-[#16201a]/60">
+                <span className="font-semibold text-[#16201a]">Это рассрочка от собственника.</span> Взнос
+                и платежи вносятся напрямую продавцу, банк в схеме не участвует — поэтому без процентов,
+                справок и проверки кредитной истории. Оформляется с менеджером.
               </p>
             </div>
           </div>

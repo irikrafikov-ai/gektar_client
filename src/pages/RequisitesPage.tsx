@@ -38,17 +38,6 @@ export function RequisitesPage() {
       ],
     },
     {
-      title: 'Банковские реквизиты',
-      rows: [
-        { label: 'Расчётный счёт', value: COMPANY.bank.account, copyable: true },
-        { label: 'Банк', value: COMPANY.bank.name },
-        { label: 'БИК', value: COMPANY.bank.bic, copyable: true },
-        { label: 'Корр. счёт', value: COMPANY.bank.corrAccount, copyable: true },
-        { label: 'ИНН банка', value: COMPANY.bank.inn, copyable: true },
-        { label: 'КПП банка', value: COMPANY.bank.kpp, copyable: true },
-      ],
-    },
-    {
       title: 'Контакты',
       rows: [
         { label: 'Телефон', value: COMPANY.phone },
