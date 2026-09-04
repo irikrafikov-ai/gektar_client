@@ -15,8 +15,8 @@ import {
   rememberPaymentId,
 } from '@/services/payments';
 
-const PHONE = '+7 (995) 169-12-30';
-const PHONE_HREF = 'tel:+79951691230';
+const PHONE = '+7 (499) 325-48-58';
+const PHONE_HREF = 'tel:+74993254858';
 
 export function PaymentPage() {
   const [searchParams] = useSearchParams();
@@ -304,7 +304,10 @@ export function PaymentPage() {
                 <Link to="/offer" className="text-[#1c5238] underline underline-offset-2">
                   договором оферты
                 </Link>{' '}
-                и обработкой персональных данных
+                и{' '}
+                <Link to="/privacy" className="text-[#1c5238] underline underline-offset-2">
+                  обработкой персональных данных
+                </Link>
               </span>
             </label>
 

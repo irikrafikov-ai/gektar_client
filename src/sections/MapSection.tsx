@@ -68,11 +68,11 @@ export function MapSection() {
             Не можете определиться с локацией? Позвоните — поможем выбрать!
           </p>
           <a
-            href="tel:+79951691230"
+            href="tel:+74993254858"
             className="inline-flex items-center gap-2 bg-[#1c5238] hover:bg-[#16432e] text-white px-6 py-3.5 rounded-full text-[16px] font-semibold transition-colors"
           >
             <Phone className="w-5 h-5" />
-            +7 (995) 169-12-30
+            +7 (499) 325-48-58
           </a>
         </div>
       </div>

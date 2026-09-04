@@ -45,7 +45,7 @@ export async function sendLead(data: LeadData): Promise<{ success: boolean; mess
     return { success: true, message: 'Заявка отправлена! Мы свяжемся с вами.' };
   }
 
-  return { success: false, message: 'Ошибка отправки. Позвоните: +7 (995) 169-12-30' };
+  return { success: false, message: 'Ошибка отправки. Позвоните: +7 (499) 325-48-58' };
 }
 
 /** Отправка в Google Apps Script */

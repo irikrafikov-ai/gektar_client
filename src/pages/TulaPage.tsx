@@ -200,7 +200,7 @@ export function TulaPage() {
             {/* ЗВОНОК + НАПИСАТЬ В MAX */}
             <div className="flex gap-2.5">
               <a
-                href="tel:+79951691230"
+                href="tel:+74993254858"
                 className="group flex-1 flex items-center justify-center gap-2 bg-[#1c5238] hover:bg-[#16432e] text-white py-3.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-500 shadow-[0_4px_24px_rgba(20,40,28,0.08)] hover:-translate-y-0.5 whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />

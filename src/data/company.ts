@@ -21,8 +21,8 @@ export const COMPANY = {
   legalEmail: 'strateg-moskva@mail.ru',
 
   /** Контакты для клиентов */
-  phone: '+7 (995) 169-12-30',
-  phoneHref: 'tel:+79951691230',
+  phone: '+7 (499) 325-48-58',
+  phoneHref: 'tel:+74993254858',
   email: 'Gektar.RF@yandex.com',
 
   bank: {

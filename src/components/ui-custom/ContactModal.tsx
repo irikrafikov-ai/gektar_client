@@ -45,10 +45,10 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         setFormData({ name: '', phone: '', purpose: '', budget: '' });
         onClose();
       } else {
-        toast.error(result.message || 'Ошибка отправки. Позвоните нам: +7 (995) 169-12-30');
+        toast.error(result.message || 'Ошибка отправки. Позвоните нам: +7 (499) 325-48-58');
       }
     } catch {
-      toast.error('Ошибка отправки. Позвоните нам: +7 (995) 169-12-30');
+      toast.error('Ошибка отправки. Позвоните нам: +7 (499) 325-48-58');
     } finally {
       setIsSubmitting(false);
     }

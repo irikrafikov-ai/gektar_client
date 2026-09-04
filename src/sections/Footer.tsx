@@ -84,11 +84,11 @@ export function Footer({ onContactClick }: FooterProps) {
 
             <div className="space-y-3">
               <a
-                href="tel:+79951691230"
+                href="tel:+74993254858"
                 className="flex items-center gap-3 text-white hover:text-[#3ec469] transition-colors"
               >
                 <Phone className="w-5 h-5 text-[#3ec469]/80" />
-                +7 (995) 169-12-30
+                +7 (499) 325-48-58
               </a>
               <a
                 href="mailto:Gektar.RF@yandex.com"
@@ -160,7 +160,7 @@ export function Footer({ onContactClick }: FooterProps) {
                 Оставить заявку
               </Button>
               <a
-                href="tel:+79951691230"
+                href="tel:+74993254858"
                 className="bg-white/20 hover:bg-white/30 text-white px-6 h-12 rounded-full font-semibold transition-colors flex items-center justify-center"
               >
                 Позвонить
@@ -185,7 +185,7 @@ export function Footer({ onContactClick }: FooterProps) {
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white/45 text-sm">
             <Link to="/pay" className="hover:text-[#3ec469] transition-colors">Оформить рассрочку</Link>
             <Link to="/requisites" className="hover:text-[#3ec469] transition-colors">Реквизиты</Link>
-            <button className="hover:text-[#3ec469] transition-colors">Политика конфиденциальности</button>
+            <Link to="/privacy" className="hover:text-[#3ec469] transition-colors">Персональные данные</Link>
             <Link to="/offer" className="hover:text-[#3ec469] transition-colors">Договор оферты</Link>
           </div>
         </div>

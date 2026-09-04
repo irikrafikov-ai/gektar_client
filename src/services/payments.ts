@@ -79,10 +79,10 @@ export async function createPayment(data: PaymentRequest): Promise<PaymentCreate
   const result = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    throw new Error(result.error || 'Не удалось создать платёж. Позвоните: +7 (995) 169-12-30');
+    throw new Error(result.error || 'Не удалось создать платёж. Позвоните: +7 (499) 325-48-58');
   }
   if (!result.confirmationUrl) {
-    throw new Error('Платёжный сервис не вернул ссылку на оплату. Позвоните: +7 (995) 169-12-30');
+    throw new Error('Платёжный сервис не вернул ссылку на оплату. Позвоните: +7 (499) 325-48-58');
   }
 
   return result as PaymentCreated;

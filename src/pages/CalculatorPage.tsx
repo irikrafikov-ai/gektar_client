@@ -140,7 +140,7 @@ export function CalculatorPage() {
                 Оформить рассрочку онлайн
               </Link>
               <a
-                href="tel:+79951691230"
+                href="tel:+74993254858"
                 className="group w-full flex items-center justify-center gap-3 bg-white hover:bg-[#f4f1ea] text-[#16201a] border border-[#1c5238]/10 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-[0_2px_10px_rgba(20,40,28,0.06)]"
               >
                 <Phone className="w-5 h-5 text-[#1c5238] group-hover:scale-110 transition-transform" />

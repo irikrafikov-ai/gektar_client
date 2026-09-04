@@ -93,7 +93,7 @@ if ($amount < $minAmount) {
 }
 if ($amount > $maxAmount) {
     gk_fail(422, sprintf(
-        'Рассрочка оформляется на сумму до %s. Для этого участка позвоните нам: +7 (995) 169-12-30',
+        'Рассрочка оформляется на сумму до %s. Для этого участка позвоните нам: +7 (499) 325-48-58',
         gk_money($maxAmount)
     ));
 }
@@ -166,7 +166,7 @@ if ($config['send_receipt']) {
 if ($code >= 300 || empty($result['id'])) {
     gk_log('yookassa_create_failed', ['http' => $code, 'response' => $result]);
     $reason = $result['description'] ?? ($result['error'] ?? 'неизвестная ошибка');
-    gk_fail(502, 'Не удалось создать платёж. Позвоните нам: +7 (995) 169-12-30', (string) $reason);
+    gk_fail(502, 'Не удалось создать платёж. Позвоните нам: +7 (499) 325-48-58', (string) $reason);
 }
 
 gk_log('payment_created', [

@@ -107,11 +107,11 @@ export function Header({ onContactClick }: HeaderProps) {
           {/* Right side */}
           <div className="flex items-center gap-4">
             <a
-              href="tel:+79951691230"
+              href="tel:+74993254858"
               className="hidden sm:flex items-center gap-2 text-[14px] font-semibold text-[#16201a] hover:text-[#1c5238] transition-colors"
             >
               <Phone className="w-4 h-4" />
-              +7 (995) 169-12-30
+              +7 (499) 325-48-58
             </a>
 
             <a
@@ -174,11 +174,11 @@ export function Header({ onContactClick }: HeaderProps) {
               </Link>
 
               <a
-                href="tel:+79951691230"
+                href="tel:+74993254858"
                 className="flex items-center gap-2 py-2.5 px-4 text-[16px] font-semibold text-[#16201a]"
               >
                 <Phone className="w-4 h-4" />
-                +7 (995) 169-12-30
+                +7 (499) 325-48-58
               </a>
               <button
                 onClick={onContactClick}
