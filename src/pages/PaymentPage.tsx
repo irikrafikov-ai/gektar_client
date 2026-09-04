@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { AlertCircle, ArrowLeft, Check, CreditCard, Loader2, ShieldCheck } from 'lucide-react';
+import { AlertCircle, ArrowLeft, Check, CreditCard, FileText, Loader2, ShieldCheck } from 'lucide-react';
 import { Footer } from '@/sections/Footer';
 import { ContactModal } from '@/components/ui-custom/ContactModal';
 import { Toaster } from '@/components/ui/sonner';
@@ -338,11 +338,25 @@ export function PaymentPage() {
             {/* Кто продавец — должно быть видно до оформления */}
             <p className="text-center text-[12px] text-[#16201a]/40 mt-4 leading-relaxed">
               Продавец: {COMPANY_SHORT_LINE}
-              <br />
-              <Link to="/requisites" className="text-[#1c5238] underline underline-offset-2">
-                Полные реквизиты
-              </Link>
             </p>
+
+            {/* Документы отдельной строкой: в тексте согласия их легко не заметить */}
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-3 pt-4 border-t border-[#1c5238]/10">
+              {[
+                { to: '/offer', label: 'Договор оферты' },
+                { to: '/privacy', label: 'Персональные данные' },
+                { to: '/requisites', label: 'Реквизиты' },
+              ].map((doc) => (
+                <Link
+                  key={doc.to}
+                  to={doc.to}
+                  className="flex items-center gap-1.5 text-[12px] text-[#1c5238]/70 hover:text-[#1c5238] transition-colors"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  {doc.label}
+                </Link>
+              ))}
+            </div>
           </form>
 
           <Link
